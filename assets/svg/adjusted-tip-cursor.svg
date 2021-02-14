@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="25.7px"
+   width="26.55px"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="adjusted-tip-cursor.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+  <metadata
+     id="metadata21">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     id="namedview19"
+     showgrid="false"
+     inkscape:zoom="22.781494"
+     inkscape:cx="15.754804"
+     inkscape:cy="12.861135"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg17"
+     inkscape:document-rotation="0" />
+  <g
+     transform="rotate(31,-4.2628858,4.4550326)"
+     id="g8">
+    <path
+       d="m 14.4,13.9 -3.45,7.55 -15.35,-25.5 0.15,-0.2 26.4,14.8 -7.75,3.35"
+       fill="#181c1d"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path2" />
+    <path
+       d="M 13.35,12.85 10.5,19.05 -2.1,-1.9 -1.95,-2.05 19.7,10.1 13.35,12.85"
+       fill="url(#gradient0)"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path4"
+       style="fill:url(#gradient0)" />
+    <path
+       d="M 13.35,12.85 10.5,19.05 -2.1,-1.9 -1.95,-2.05 19.7,10.1 13.35,12.85 m -0.4,-0.5 5.7,-2.3 -19.6,-11.2 -0.1,0.1 11.5,19 2.5,-5.6"
+       fill="#f5cb5b"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path6" />
+  </g>
+  <defs
+     id="defs15">
+    <radialGradient
+       cx="0"
+       cy="0"
+       gradientTransform="matrix(0.0119,-0.0115,0.0119,0.0115,6.55,6.25)"
+       gradientUnits="userSpaceOnUse"
+       id="gradient0"
+       r="819.2"
+       spreadMethod="pad">
+      <stop
+         offset="0.0"
+         stop-color="#ffffcb"
+         id="stop10" />
+      <stop
+         offset="0.9176470588235294"
+         stop-color="#f5cb5b"
+         id="stop12" />
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,51 @@
+{
+    "version":"3.0.0",
+    "bethesda":
+    {
+        "hide": true,
+        "x": 0,
+        "y": 0,
+        "rotation": 31
+    },
+    "shapes":
+    {
+        "background":
+        {
+            "color":"0x181c1d",
+            "path":
+            [
+                {"x": 0, "y":0.1},
+                {"x": 0.25, "y": 0},
+                {"x": 15.25, "y": 26.3},
+                {"x": 6.85, "y": 25.15},
+                {"x": 0,"y": 29.85}
+
+            ] 
+        },
+        "gradient": 
+        {
+            "color": "0x00ff00",
+            "path": 
+            [
+                {"x": 0.85, "y":3.1},
+                {"x": 1.05, "y": 3.05},
+                {"x": 13.35, "y": 24.65},
+                {"x": 6.5, "y": 23.7},
+                {"x": 0.85,"y": 27.55}
+            ]
+        }
+    },
+    "filters":
+    [
+        {
+            "type":"glow",
+            "color":"ff0000",
+            "alpha":1.0,
+            "blurX":8,
+            "blurY":8,
+            "strength":1.5,
+            "quality":3,
+            "inner":false
+        }
+    ]
+}

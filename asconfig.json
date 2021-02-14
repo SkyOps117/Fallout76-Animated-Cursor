@@ -1,0 +1,22 @@
+{
+	"config": "flex",
+	"mainClass": "Main",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"output": "bin\\AnimatedCursor.swf",
+		"target-player": "32.0",
+		"swf-version": 43,
+		"default-frame-rate": 60,
+		"default-background-color": "0xBFBFBF",
+		"default-size": {
+			"width": 1280,
+			"height": 720
+		},
+		"strict":true,
+		"use-gpu": true,
+		"warnings": true,
+		"use-network": true
+	}
+}
