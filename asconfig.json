@@ -5,7 +5,7 @@
 		"source-path": [
 			"src"
 		],
-		"output": "bin\\AnimatedCursor.swf",
+		"output": "bin/AnimatedCursor.swf",
 		"target-player": "32.0",
 		"swf-version": 43,
 		"default-frame-rate": 60,

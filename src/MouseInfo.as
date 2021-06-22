@@ -25,13 +25,14 @@ package
                   distance = 0;
                   speed = 0;
                   direction = 0;
-                  infoTxt = new FalloutText(0xFFFFCB, 18, 0xF5CB5B80, 150, 75);
+                  infoTxt = new FalloutText(0xFFFFCB, 14, 0xF5CB5B80, 1.0, 150, 75);
                   infoStr = "";
                   addChild(infoTxt);
             }
 
             public function update():void
             {
+                  infoStr = "";
                   lastPosition = currentPosition;
                   currentPosition.x = this.mouseX;
                   currentPosition.y = this.mouseY;
@@ -42,8 +43,8 @@ package
                   speed = distance / ((getTimer() / 1000) % 60);
                   
                   infoStr += currentPosition.toString() + "\r";
-                  infoStr += distancePoint.toString() + "\r";
-                  infoStr += distance.toString() + "\r";
+                  //infoStr += distancePoint.toString() + "\r";
+                  //infoStr += distance.toString() + "\r";
                   infoStr += speed.toString() + "\r";
                   infoTxt.setMessage(infoStr);
             }

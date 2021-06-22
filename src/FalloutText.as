@@ -22,15 +22,8 @@ package
         private var backColor:uint = 0xF5CB5B;
         private var backAlpha:Number = 0.7;
 
-        private var lines:int = 0;
-
-		public function FalloutText( 
-            _fontColor:uint = 0xFFFFCB,
-            _fontSize:int = 22,
-            _backColor:uint = 0xF5CB5B80,
-            _backAlpha:Number = 0.7,
-            _width:int = 300,
-            _height:int = 100)
+        //fontColor, fontSize, backColor, backAlpha, width, height
+		public function FalloutText(_fontColor:uint, _fontSize:int, _backColor:uint, _backAlpha:Number, _width:int, _height:int)
 		{
             backColor = _backColor;
             backAlpha = _backAlpha;
@@ -44,21 +37,22 @@ package
             txt.autoSize = TextFieldAutoSize.LEFT;
             txt.type = TextFieldType.DYNAMIC;
             txt.antiAliasType = AntiAliasType.ADVANCED;
-            txt.background = false;
+            txt.background = true;
+            txt.backgroundColor = backColor;
 			//txt.name = "debugText";
 			txt.text = "";
-            this.width = _width;
-            this.height = _height;
+            txt.width = _width;
+            txt.height = _height;
             backgroundShape = new Shape();
             drawBackground(backColor, backAlpha);
 
-            shadow = new DropShadowFilter(0, 0, 0x000000, 1, 2, 2, 3, BitmapFilterQuality.HIGH);
+            shadow = new DropShadowFilter(0, 0, 0x000000, 1.0, 2, 2, 3, BitmapFilterQuality.HIGH);
             glow = new GlowFilter(0xF5CB5B, 1, 2, 2, 2, 3, true);
             txt.filters = [shadow];
             backgroundShape.filters = [shadow, glow];
 
             addChild(txt);
-            addChildAt(backgroundShape, 0);
+            //addChildAt(backgroundShape, 0);
 		}
 
         public function drawBackground(_color:uint = 0xF5CB5B, _alpha:Number = 0.7):void
@@ -76,6 +70,7 @@ package
 
         public function setMessage(_message:String):void
         {
+            txt.text = "";
             txt.text = _message;
             txt.width = 300;
             txt.height = 300;

@@ -1,5 +1,6 @@
 package
 {
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.display.Shape;
 	import flash.events.Event;
@@ -20,7 +21,7 @@ package
 	import flash.text.TextFieldType;
 	import flash.text.AntiAliasType;
 	
-	public class Main extends Sprite
+	public class Main extends MovieClip
 	{
 		private var topLevel:* = null;
 		private var cursor:*;
@@ -41,32 +42,17 @@ package
 			*/
 			counter = new Counter(1000);
 
-			addEventListener(Event.ADDED_TO_STAGE, onStageInit);
-			addEventListener(Event.ENTER_FRAME, onEnterFrame);
-			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
-			addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
-			addEventListener(MouseEvent.MOUSE_UP, onMouseUp);	
+			addEventListener(Event.ADDED_TO_STAGE, onStageInit);	
 		}
 
-		private function onStageInit(e:Event = null):void
+		private function onStageInit(e:Event):void
 		{
-			stage.scaleMode = StageScaleMode.NO_SCALE;
+			addEvents();
 			//Get the top level display object named root1
 			topLevel = stage.getChildAt(0);
 			mouseInfo = new MouseInfo();
-			if (topLevel != null)
-			{
-				
-				counter.start();
-				trace("loading: " + "../CursorConfig.json");
-				loadJSON("../CursorConfig.json");
-			}
-			else
-			{
-				trace("Error: Can't find root1");
-			}
 
-			debugTxt = new FalloutText(0xFFFFCB, 22, 0xF5CB5B, 0.7, 200, 500);
+			debugTxt = new FalloutText(0xFFFFCB, 22, 0xF5CB5B, 0.7, 640, 480);
 			tempTxt = new TextField();
 			var txtFormat:TextFormat = new TextFormat("$MAIN_Font_Light", 22, 0xffffcb); //color: 16777163
 			txtFormat.align = "left";
@@ -77,14 +63,28 @@ package
             tempTxt.autoSize = TextFieldAutoSize.LEFT;
             tempTxt.type = TextFieldType.DYNAMIC;
             tempTxt.antiAliasType = AntiAliasType.ADVANCED;
-            tempTxt.background = false;
+            tempTxt.background = true;
+			tempTxt.backgroundColor = 0x00000080;
 			tempTxt.text = "FLASH PLAYER DEBUG TEXT";
-			tempTxt.x = 960;
-			tempTxt.y = 540;
-			addChild(tempTxt);
-			addChild(debugTxt);
-		}
+			tempTxt.x = stage.width / 2;
+			tempTxt.y = stage.height / 2;
 
+			if (topLevel != null)
+			{
+				//topLevel.addChild(tempTxt);
+				//topLevel.addChild(debugTxt);
+				counter.start();
+				trace("loading: " + "../CursorConfig.json");
+				loadJSON("../CursorConfig.json");
+			}
+			else
+			{
+				trace("Error: Can't find root1");
+			}
+
+			
+		}
+		
 		private function runInGame():void
 		{
 			cursor = topLevel.Cursor_mc;
@@ -94,17 +94,15 @@ package
 			cursorShape.y += 1.5;
 			cursorAni = new AnimatedCursor(cfg);
 			cursor.addChild(mouseInfo);
-			
-			addEvents();
 
 		}
 
 		private function runOutsideGame():void
 		{
+			//stage.scaleMode = StageScaleMode.NO_SCALE;
 			cursorAni = new AnimatedCursor(cfg);
 			
-			addChild(mouseInfo);
-			//addEvents();
+			topLevel.addChild(mouseInfo);
 		}
 
 		//Main loop
@@ -143,7 +141,7 @@ package
 			if (cfg == null)
 			{
 				trace("Can't find config");
-				//debugTxt.setMessage("Can't find config");
+				debugTxt.setMessage("Can't find config");
 			}
 			else
 			{
@@ -160,7 +158,7 @@ package
 				}
 				else //if (topLevel.getChildAt(0).name == "instance1")
 				{
-					trace("Not injected, running standalone as: " + topLevel.name + " | " + topLevel.getChildAt(0).name)
+					//trace("Not injected, running standalone as: " + topLevel.name + " | " + topLevel.getChildAt(0).name)
 					runOutsideGame();
 				}
 				/*else
@@ -173,6 +171,10 @@ package
 		private function addEvents():void
 		{
 			trace("adding events . . .");
+			addEventListener(Event.ENTER_FRAME, onEnterFrame);
+			addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+			addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 		}
 
 		private function onMouseMove(e:MouseEvent):void
@@ -196,6 +198,11 @@ package
 		{
 			Security.showSettings(SecurityPanel.LOCAL_STORAGE);
 		}
+
+		private function initFalloutText():void
+		{
+			
+		}	
 
 		private function displayTimerInfo():void
 		{
