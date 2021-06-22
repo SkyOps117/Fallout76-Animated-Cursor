@@ -39,7 +39,7 @@ package
 			/*
 			if (stage) onStageInit();
 			else addEventListener(Event.ADDED_TO_STAGE, onStageInit);
-			*/
+			*hello*/
 			counter = new Counter(1000);
 
 			addEventListener(Event.ADDED_TO_STAGE, onStageInit);	
